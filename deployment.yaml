@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  Name: Maven App
+  labels:
+    app:maven
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:maven
+    spec:
+      containers:
+      - name: mavencontainer
+        image: meghanajshetty/maventomcat:latest
+        ports:
+        - containerPort: 8080
+  selector:
+    matchLabels: 
+      app:maven
+      
+      
