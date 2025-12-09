@@ -3,13 +3,13 @@ kind: Deployment
 metadata: 
   Name: Maven
   labels:
-    app:maven
+    app: maven
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app:maven
+        app: maven
     spec:
       containers:
       - name: mavencontainer
@@ -18,6 +18,6 @@ spec:
         - containerPort: 8080
   selector:
     matchLabels: 
-      app:maven
+      app: maven
       
       
