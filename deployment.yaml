@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: mavenapp
+metadata:
+  name: maven
   labels:
     app: maven
 spec:
   replicas: 1
   selector:
-    matchLabels: 
+    matchLabels:
       app: maven
   template:
     metadata:
@@ -15,30 +15,7 @@ spec:
         app: maven
     spec:
       containers:
-      - name: mavencontainer
+      - name: maven
         image: meghanajshetty/maventomcat:latest
         ports:
         - containerPort: 8080
-  
-      
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: maventomcat
-#   labels:
-#     app: maven
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: cafestatic
-#   template:
-#     metadata:
-#       labels:
-#         app: cafestatic
-#     spec:
-#       containers:
-#       - name: cafestatic
-#         image: sreedocker123/cafewebimage:final
-#         ports:
-#         - containerPort: 80
