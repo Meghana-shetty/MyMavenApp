@@ -3,11 +3,11 @@ kind: Service
 metadata:
   Name: mavenservice
   labels:
-    app:maven
+    app: maven
 spec:
   type: NodePort
   selector:
-    app:maven
+    app: maven
   ports:
     - port: 8086
       targetPort: 8080
